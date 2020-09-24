@@ -7,7 +7,32 @@ public class ComportamientoParticula : MonoBehaviour
     public double campoElectricoPlaca = 0.0;
     public double velocidadInicial = 30.0;
     public double anguloDeTiro = 45.0;
-  
+    
+    
+    public int seleccion = 0;
+
+   /*public PropiedadesParticula[] particulas = {
+        new PropiedadesParticula(),//Electron
+        new PropiedadesParticula(),//Particula alfa
+        new PropiedadesParticula(),
+        new PropiedadesParticula(),
+        new PropiedadesParticula(),
+        new PropiedadesParticula(),
+        new PropiedadesParticula(),
+        new PropiedadesParticula(),
+        new PropiedadesParticula(),
+        new PropiedadesParticula()};*/
+
+
+
+
+
+
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,18 +83,18 @@ public class ComportamientoParticula : MonoBehaviour
      **/
     private double AceleracionCampo()
     {
-        double carga = gameObject.GetComponent<PropiedadesParticula>().carga;
-        double masa = gameObject.GetComponent<PropiedadesParticula>().masa;
+      //  double carga = gameObject.GetComponent<PropiedadesParticula>().carga;
+       // double masa = gameObject.GetComponent<PropiedadesParticula>().masa;
 
-        Debug.Log("masa" + masa);
+       /* Debug.Log("masa" + masa);
         Debug.Log("carga" + carga);
 
         double result = ((carga * campoElectricoPlaca)/ masa);
-        Debug.Log("\nresultado Aceleracion" + result);
+        Debug.Log("\nresultado Aceleracion" + result);*/
 
 
 
-        return result;
+        return 0/*result*/;
     }
 
     void SetCampoElectrico()
