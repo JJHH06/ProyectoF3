@@ -14,6 +14,9 @@ public class ComportamientoParticula : MonoBehaviour
  
     private int seleccion = Data.datos.n_particula;
 
+    private double tiempoEspera = 0;
+    private bool verificadorTiempo = false;
+
     public GameObject[] particulas;
 
     // Start is called before the first frame update
@@ -24,11 +27,7 @@ public class ComportamientoParticula : MonoBehaviour
         particulas[seleccion].SetActive(true);
 
 
-        //Se coloca la velocidad inicial de la particula
-        VelocidadInicial(velocidadInicial, anguloDeTiro);
-
-        //Coloca el campo electrico a la placa
-        SetCampoElectrico();
+        
 
         
 
@@ -38,6 +37,19 @@ public class ComportamientoParticula : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        tiempoEspera += Time.deltaTime/Time.timeScale;
+        //Debug.Log(tiempoEspera.ToString());
+
+        if((tiempoEspera >= 2) && (!verificadorTiempo)){
+            Debug.Log("YA PASO EL TIEMPO " + tiempoEspera.ToString());
+            verificadorTiempo = true;
+
+            //Se coloca la velocidad inicial de la particula
+            VelocidadInicial(velocidadInicial, anguloDeTiro);
+
+            //Coloca el campo electrico a la placa
+            SetCampoElectrico();
+        }
         
     }
 
