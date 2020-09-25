@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
@@ -66,6 +67,7 @@ public class MainMenu : MonoBehaviour
     private void toSimulacion()
     {
         Debug.Log("Se abrió la simulacion.");
+        SceneManager.LoadScene(1);
     }
 
     public void exitGame()
