@@ -122,6 +122,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &23882583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6730988652641423118, guid: 13df8ded3893019468e5477b3df2a0a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1491672886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &103046294
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &340325486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,6 +1090,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986977731}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1068721987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6012912565293862447, guid: 4d52076637b5b0845894d5a494df2537,
+    type: 3}
+  m_PrefabInstance: {fileID: 6012912564113532197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1084648269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,6 +2295,17 @@ MonoBehaviour:
   velocidadInicial: 0
   anguloDeTiro: 45
   seleccion: 0
+  particulas:
+  - {fileID: 1068721987}
+  - {fileID: 4077614933993474968}
+  - {fileID: 1710169759}
+  - {fileID: 6012912565380424283}
+  - {fileID: 1292685426}
+  - {fileID: 7761674765910323094}
+  - {fileID: 23882583}
+  - {fileID: 340325485}
+  - {fileID: 1511415686}
+  - {fileID: 2048776938}
 --- !u!54 &1930713214
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,38 +4,25 @@ using UnityEngine;
 
 public class ComportamientoParticula : MonoBehaviour
 {
+    private double ESCALA = 1e15;
+
+
     public double campoElectricoPlaca = 0.0;
     public double velocidadInicial = 30.0;
     public double anguloDeTiro = 45.0;
-    
-    
+ 
     public int seleccion = 0;
 
-   /*public PropiedadesParticula[] particulas = {
-        new PropiedadesParticula(),//Electron
-        new PropiedadesParticula(),//Particula alfa
-        new PropiedadesParticula(),
-        new PropiedadesParticula(),
-        new PropiedadesParticula(),
-        new PropiedadesParticula(),
-        new PropiedadesParticula(),
-        new PropiedadesParticula(),
-        new PropiedadesParticula(),
-        new PropiedadesParticula()};*/
-
-
-
-
-
-
-
-
-
-
+    public GameObject[] particulas;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        //esto nos muestra visualmente la particula que se selecciono
+        particulas[seleccion].SetActive(true);
+
+
         //Se coloca la velocidad inicial de la particula
         VelocidadInicial(velocidadInicial, anguloDeTiro);
 
@@ -83,25 +70,24 @@ public class ComportamientoParticula : MonoBehaviour
      **/
     private double AceleracionCampo()
     {
-      //  double carga = gameObject.GetComponent<PropiedadesParticula>().carga;
-       // double masa = gameObject.GetComponent<PropiedadesParticula>().masa;
+        double carga = particulas[seleccion].GetComponent<PropiedadesParticula>().carga;
+        double masa = particulas[seleccion].GetComponent<PropiedadesParticula>().masa;
 
-       /* Debug.Log("masa" + masa);
-        Debug.Log("carga" + carga);
+         Debug.Log("masa" + masa);
+         Debug.Log("carga" + carga);
 
-        double result = ((carga * campoElectricoPlaca)/ masa);
-        Debug.Log("\nresultado Aceleracion" + result);*/
+         double result = ((carga * campoElectricoPlaca)/ masa);
+         Debug.Log("\nresultado Aceleracion" + result);
 
-
-
-        return 0/*result*/;
+        return result;
     }
 
     void SetCampoElectrico()
     {
-        SetGravedadParticula(AceleracionCampo()*(1e15)); //El e15 es por la escala
-        Debug.Log(AceleracionCampo() * (1e15));
+        SetGravedadParticula(AceleracionCampo()*(ESCALA));
+        Debug.Log(AceleracionCampo() * (ESCALA));
     }
+
 
 
 }
