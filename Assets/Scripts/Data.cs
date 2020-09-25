@@ -10,7 +10,6 @@ public class Data : MonoBehaviour
     public double magnitud_campo;
     public int n_particula;
 
-
     void Awake()
     {
         if (Data.datos == null)

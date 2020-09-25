@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
@@ -41,13 +42,19 @@ public class MainMenu : MonoBehaviour
     public void trySimulation()
     {
         Debug.Log("Verificando la información...");
-        
+
         try
         { 
-            //Data.datos.velocidad = double.Parse(velocidad.text);
-            //Data.datos.angulo_velocidad = double.Parse(angulo_velocidad.text);
-            //Data.datos.magnitud_campo = double.Parse(magnitud_campo.text);
-            //Data.datos.n_particula = int.Parse(n_particula.text);
+            
+            Data.datos.velocidad = double.Parse(velocidad.text);
+            Data.datos.angulo_velocidad = double.Parse(angulo_velocidad.text);
+            Data.datos.magnitud_campo = double.Parse(magnitud_campo.text);
+            Data.datos.n_particula = int.Parse(n_particula.text) - 1;
+
+            if (Data.datos.velocidad < 0 ||
+                Data.datos.angulo_velocidad < 0 || Data.datos.angulo_velocidad > 90 ||
+                Data.datos.n_particula < 0 || Data.datos.n_particula > 11)
+                throw new System.ArgumentException();
 
             toSimulacion();
         }
@@ -56,16 +63,11 @@ public class MainMenu : MonoBehaviour
             Debug.Log("Ahí algún error en los inputs.");
         }
     }
-
+     
     private void toSimulacion()
     {
         Debug.Log("Se abrió la simulacion.");
-        /*
-        Debug.Log("Velocidad: " + Data.datos.velocidad);
-        Debug.Log("Angulo: " + Data.datos.angulo_velocidad);
-        Debug.Log("Campo: " + Data.datos.magnitud_campo);
-        Debug.Log("Partícula: " + Data.datos.n_particula);
-        */
+        SceneManager.LoadScene(1);
     }
 
     public void exitGame()
