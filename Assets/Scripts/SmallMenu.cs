@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SmallMenu : MonoBehaviour
@@ -23,5 +24,10 @@ public class SmallMenu : MonoBehaviour
     public void changeTimeScaleSlider()
     {
         changeTimeScale(slider.value);
+    }
+
+    public void toMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
