@@ -4656,7 +4656,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "6: Mu\xF3n\n7: Part\xEDcula Alfa\n8: Deuterio\n9: N\xFAcleo de Sodio\n10:
-    N\xFAcleo de C\xE1lcio"
+    N\xFAcleo de Calcio"
 --- !u!222 &2055812698
 CanvasRenderer:
   m_ObjectHideFlags: 0
