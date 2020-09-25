@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public GameObject inicio;
     public GameObject autores;
     public GameObject preparacion;
+    public GameObject errorMsgBox;
 
     [Space(10)]
     [Header("Para la lectura de datos")]
@@ -61,6 +62,7 @@ public class MainMenu : MonoBehaviour
         catch
         {
             Debug.Log("Ahí algún error en los inputs.");
+            errorMsgBox.SetActive(true);
         }
     }
      
@@ -68,6 +70,11 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Se abrió la simulacion.");
         SceneManager.LoadScene(1);
+    }
+
+    public void clearError()
+    {
+        errorMsgBox.SetActive(false);
     }
 
     public void exitGame()
