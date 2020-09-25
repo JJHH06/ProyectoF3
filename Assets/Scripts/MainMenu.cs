@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
     public InputField angulo_velocidad;
     public InputField magnitud_campo;
     public InputField n_particula;
+    public InputField ancho_campo;
 
     public void toInicio()
     {
@@ -50,11 +51,13 @@ public class MainMenu : MonoBehaviour
             Data.datos.velocidad = double.Parse(velocidad.text);
             Data.datos.angulo_velocidad = double.Parse(angulo_velocidad.text);
             Data.datos.magnitud_campo = double.Parse(magnitud_campo.text);
+            Data.datos.ancho_campo = double.Parse(ancho_campo.text);
             Data.datos.n_particula = int.Parse(n_particula.text) - 1;
 
             if (Data.datos.velocidad < 0 ||
                 Data.datos.angulo_velocidad < 0 || Data.datos.angulo_velocidad > 90 ||
-                Data.datos.n_particula < 0 || Data.datos.n_particula > 11)
+                Data.datos.n_particula < 0 || Data.datos.n_particula > 11 ||
+                Data.datos.ancho_campo < 0)
                 throw new System.ArgumentException();
 
             toSimulacion();

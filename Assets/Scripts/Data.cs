@@ -8,6 +8,7 @@ public class Data : MonoBehaviour
     public double velocidad;
     public double angulo_velocidad;
     public double magnitud_campo;
+    public double ancho_campo;
     public int n_particula;
 
     void Awake()

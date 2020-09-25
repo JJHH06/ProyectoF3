@@ -11,6 +11,7 @@ public class ComportamientoParticula : MonoBehaviour
     private double campoElectricoPlaca = Data.datos.magnitud_campo;
     private double velocidadInicial = Data.datos.velocidad;
     private double anguloDeTiro = Data.datos.angulo_velocidad;
+    private double x_max = Data.datos.ancho_campo;
  
     private int seleccion = Data.datos.n_particula;
 
@@ -25,12 +26,6 @@ public class ComportamientoParticula : MonoBehaviour
 
         //esto nos muestra visualmente la particula que se selecciono
         particulas[seleccion].SetActive(true);
-
-
-        
-
-        
-
 
     }
 
@@ -50,7 +45,17 @@ public class ComportamientoParticula : MonoBehaviour
             //Coloca el campo electrico a la placa
             SetCampoElectrico();
         }
-        
+
+        if(transform.position.x > x_max)
+        {
+            SetGravedadParticula(0.0);
+        }
+
+        if (transform.position.x > x_max + 100)
+        {
+            VelocidadInicial(0,0)
+        }
+
     }
 
 
