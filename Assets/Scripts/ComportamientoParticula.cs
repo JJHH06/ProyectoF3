@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class ComportamientoParticula : MonoBehaviour
 {
-    private double ESCALA = 1e15;
+    //*******************************
+    private const double ESCALA = 1;
+    //*******************************
 
-
-    public double campoElectricoPlaca = 0.0;
-    public double velocidadInicial = 30.0;
-    public double anguloDeTiro = 45.0;
+    private double campoElectricoPlaca = Data.datos.magnitud_campo;
+    private double velocidadInicial = Data.datos.velocidad;
+    private double anguloDeTiro = Data.datos.angulo_velocidad;
  
-    public int seleccion = 0;
+    private int seleccion = Data.datos.n_particula;
 
     public GameObject[] particulas;
 
@@ -52,8 +53,8 @@ public class ComportamientoParticula : MonoBehaviour
 
         //componentes en X & Y de la velocidad
         gameObject.GetComponent<Rigidbody>().velocity = new Vector3
-            ((float)(magnitudVelocidad * Mathf.Cos((float)anguloRadianes) * (1e15)), //Componente en x de la velocidad a escala
-            (float)(magnitudVelocidad * Mathf.Sin((float)anguloRadianes) * (1e15)), //Componente en y de la velocidad a escala
+            ((float)(magnitudVelocidad * Mathf.Cos((float)anguloRadianes) * (ESCALA)), //Componente en x de la velocidad a escala
+            (float)(magnitudVelocidad * Mathf.Sin((float)anguloRadianes) * (ESCALA)), //Componente en y de la velocidad a escala
             0);
     }
 
