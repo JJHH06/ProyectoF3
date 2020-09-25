@@ -53,7 +53,7 @@ public class ComportamientoParticula : MonoBehaviour
 
         if (transform.position.x > x_max + 100)
         {
-            VelocidadInicial(0,0)
+            VelocidadInicial(0, 0);
         }
 
     }
