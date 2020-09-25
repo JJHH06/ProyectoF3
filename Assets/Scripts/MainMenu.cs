@@ -41,14 +41,16 @@ public class MainMenu : MonoBehaviour
     public void trySimulation()
     {
         Debug.Log("Verificando la información...");
-        
+
+        Data.datos.velocidad = 0.5;
         try
         { 
-            //Data.datos.velocidad = double.Parse(velocidad.text);
-            //Data.datos.angulo_velocidad = double.Parse(angulo_velocidad.text);
-            //Data.datos.magnitud_campo = double.Parse(magnitud_campo.text);
-            //Data.datos.n_particula = int.Parse(n_particula.text);
-
+            /*
+            Data.datos.velocidad = double.Parse(velocidad.text);
+            Data.datos.angulo_velocidad = double.Parse(angulo_velocidad.text);
+            Data.datos.magnitud_campo = double.Parse(magnitud_campo.text);
+            Data.datos.n_particula = int.Parse(n_particula.text);
+            */
             toSimulacion();
         }
         catch
@@ -60,12 +62,12 @@ public class MainMenu : MonoBehaviour
     private void toSimulacion()
     {
         Debug.Log("Se abrió la simulacion.");
-        /*
+        
         Debug.Log("Velocidad: " + Data.datos.velocidad);
         Debug.Log("Angulo: " + Data.datos.angulo_velocidad);
         Debug.Log("Campo: " + Data.datos.magnitud_campo);
         Debug.Log("Partícula: " + Data.datos.n_particula);
-        */
+        
     }
 
     public void exitGame()
